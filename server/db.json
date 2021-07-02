@@ -1,0 +1,43 @@
+{
+    "employee": [
+      {
+        "id": 1,
+        "name": "Mark",
+        "gender": "male",
+        "department": [
+          "Engineering",
+          "Finance"
+        ],
+        "salary": "500000",
+        "startDate": "29 Oct 2019",
+        "note": "All In One",
+        "profilePic": "../../assets/profile-images/Ellipse -3.png"
+      },
+      {
+        "id": 2,
+        "name": "Bill Gates",
+        "gender": "male",
+        "department": [
+          "Engineering"
+        ],
+        "salary": "500000",
+        "startDate": "29 Oct 2019",
+        "note": "Terrific Engineer",
+        "profilePic": "../assets/profile-images/Ellipse -1.png"
+      },
+      {
+        "id": 3,
+        "name": "Mark",
+        "gender": "male",
+        "department": [
+          "Engineering",
+          "Finance"
+        ],
+        "salary": "500000",
+        "startDate": "29 Oct 2019",
+        "note": "All In One",
+        "profilePic": "../assets/profile-images/Ellipse -3.png"
+      }
+    ]
+  }
+  
