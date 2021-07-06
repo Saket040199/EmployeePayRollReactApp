@@ -7,6 +7,7 @@ import profile4 from '../../assets/profile-images/Ellipse 1.png';
 import './payroll-form.scss';
 import logo from '../../assets/images/logo.png';
 import { userParams, Link, withRouter } from 'react-router-dom';
+import EmployeeService from '../../services/employee-service';
 
 
     const initialState = {
@@ -225,8 +226,24 @@ import { userParams, Link, withRouter } from 'react-router-dom';
             alert("Error Occured while Submitting the Form ==> ERROR LOG : " + errorLog);
             break saveOperation;
           }
-          alert("Form Submitted Successfully!!!\n"+`${this.state.name} ${this.state.gender} ${this.state.profile} ${this.state.department} ${this.state.salary} ${this.state.startDate} ${this.state.notes}`);
+          let object = {
+            id: this.state.id,
+            name: this.state.name,
+            profile: this.state.profile,
+            gender: this.state.gender,
+            department: this.state.department,
+            salary: this.state.salary,
+            startDate: this.state.startDate,
+            note: this.state.note
+          }
+          new EmployeeService().addEmployee(object)
+          .then(data => {
+            alert("Employee Added Successfully!!!\n" + JSON.stringify(data))
+          }).catch(error => {
+            alert("Error while adding Employee!!!\nError : " + error);
+          })
           this.reset();
+        
         }
     }
       reset = () => {
