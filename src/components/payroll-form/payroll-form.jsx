@@ -238,7 +238,8 @@ import EmployeeService from '../../services/employee-service';
           }
           new EmployeeService().addEmployee(object)
           .then(data => {
-            alert("Employee Added Successfully!!!\n" + JSON.stringify(data))
+              console.log("DATA ADDED SUCCESSFULLY");
+            //alert("Employee Added Successfully!!!\n" + JSON.stringify(data))
           }).catch(error => {
             alert("Error while adding Employee!!!\nError : " + error);
           })

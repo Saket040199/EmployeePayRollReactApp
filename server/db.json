@@ -105,6 +105,17 @@
       ],
       "salary": "491700",
       "startDate": "2020-12-31T18:30:00.000Z"
+    },
+    {
+      "id": 10,
+      "name": "Ayush",
+      "profile": "../../assets/profile-images/Ellipse -2.png",
+      "gender": "male",
+      "department": [
+        "Sales"
+      ],
+      "salary": "317500",
+      "startDate": "2021-06-12T18:30:00.000Z"
     }
   ]
 }
