@@ -82,6 +82,29 @@
       ],
       "salary": 400000,
       "startDate": "2020-12-31T18:30:00.000Z"
+    },
+    {
+      "id": 8,
+      "name": "Saketjain",
+      "profile": "../../assets/profile-images/Ellipse -3.png",
+      "gender": "male",
+      "department": [
+        "HR",
+        "Others"
+      ],
+      "salary": "475900",
+      "startDate": "2020-12-31T18:30:00.000Z"
+    },
+    {
+      "id": 9,
+      "name": "Ayushi",
+      "profile": "../../assets/profile-images/Ellipse -1.png",
+      "gender": "female",
+      "department": [
+        "Finance"
+      ],
+      "salary": "491700",
+      "startDate": "2020-12-31T18:30:00.000Z"
     }
   ]
 }
