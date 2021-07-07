@@ -54,7 +54,7 @@ import EmployeeService from '../../services/employee-service';
               salary: 400000,
               day: '1',
               month: 'Jan',
-              year: '2020',
+              year: '2021',
               startDate: new Date("1 Jan 2021"),
               notes: '',
         
@@ -96,7 +96,8 @@ import EmployeeService from '../../services/employee-service';
   
       getEmployeeById = (id) => {
           new EmployeeService().getEmployeeById(id)
-              .then(responseData => {
+              .then(responseDTO => {
+                let responseData = responseDTO.data;
                   this.setEmployeeData(responseData.data);
               }).catch(error => {
                   console.log("Error while fetching employee data by ID :\n" + JSON.stringify(error));
@@ -112,7 +113,7 @@ import EmployeeService from '../../services/employee-service';
           let dateArray = this.stringifyDate(employee.startDate).split(" ");
           let employeeDay = (dateArray[0].length === 1) ? '0' + dateArray[0] : dateArray[0];
           this.setState({
-              id: employee.id,
+              id: employee.employeePayrollId,
               name: employee.name,
               profile: employee.profile,
               gender: employee.gender,
@@ -139,7 +140,7 @@ import EmployeeService from '../../services/employee-service';
           }
           departmentChangeHandler = async (event) => {
             {if(event.target.checked) {
-              await this.setState({department: this.state.department.concat(event.target.value)});
+              await this.setState({ department: this.state.department.concat(event.target.value) });
             }
             if (!event.target.checked) {
               let index = 0;
@@ -286,14 +287,15 @@ import EmployeeService from '../../services/employee-service';
           new EmployeeService().addEmployee(object)
           .then(data => {
               console.log("DATA ADDED SUCCESSFULLY");
-              alert("Employee Added Successfully!!!\n" + JSON.stringify(data))
+              // alert("Employee Added Successfully!!!\n" + JSON.stringify(data))
               this.reset();
               this.props.history.push("/home");
           }).catch(error => {
-            alert("Error while adding Employee!!!\nError : " + error);
+            console.log("Error while adding Employee!!!\nError : " + error);
           })
          
           }
+          this.reset();
         }
     }
       reset = () => {

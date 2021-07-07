@@ -21,7 +21,8 @@ class HomePage extends React.Component {
 
     componentDidMount() {
         this.employeeService.getAllEmployees()
-            .then(responseData => {
+            .then(responseDTO => {
+                let responseData = responseDTO.data;
                   this.setState({allEmployeeArray: responseData.data});
                 this.setState({ employeeArray: responseData.data });
             }).catch(error => {

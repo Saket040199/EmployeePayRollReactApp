@@ -41,15 +41,16 @@ const EmployeeList = (props) => {
                 </tr>
                 {
                     props.employeeArray.map((employee) => (
-                        <tr key={employee.id}>
+                        <tr key={employee.employeePayrollId}>
                             <td><img src={handleProfilePicture(employee.profile)} alt="" /></td>
                             <td>{employee.name}</td>
                             <td>{employee.gender}</td>
-                            <td>{employee.department.map(dept => (<div className="dept-label">{dept}</div>))}</td>
+                            <td>{employee.department &&
+                                  employee.department.map(dept => (<div className="dept-label">{dept}</div>))}</td>
                             <td> ₹ {employee.salary}</td>
                             <td>{stringifyDate(employee.startDate)}</td>
-                            <td><img className="deleteIcon" src={deleteIcon} onClick={() => remove(employee.id)} alt="delete" />
-                                <img  className="editIcon" src={editIcon} onClick={() => edit(employee.id)} alt="edit" /></td>
+                            <td><img className="deleteIcon" src={deleteIcon} onClick={() => remove(employee.employeePayrollId)} alt="delete" />
+                                <img  className="editIcon" src={editIcon} onClick={() => edit(employee.employeePayrollId)} alt="edit" /></td>
                         </tr>
                     ))
                 }
