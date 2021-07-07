@@ -7,6 +7,7 @@ import profile2 from '../../assets/profile-images/Ellipse -2.png';
 import profile3 from '../../assets/profile-images/Ellipse -3.png';
 import profile4 from '../../assets/profile-images/Ellipse 1.png';
 import { withRouter } from 'react-router-dom';
+import EmployeeService from '../../services/employee-service';
 
 const EmployeeList = (props) => {
 
@@ -15,6 +16,16 @@ const EmployeeList = (props) => {
         props.history.push(`payroll-form/${id}`);
     }
 
+    const remove = (id) => {        
+        new EmployeeService().deleteEmployee(id).then(responseText => {
+        console.log(responseText);
+        window.location.reload();
+        //this.props.history.push("/home");
+        }).catch(error => {
+         // alert("Error occurred while deleting the Employee!!!"+error);
+        })
+       
+    }
     return (
         <table id="display" className="table">
             <tbody>
@@ -37,7 +48,7 @@ const EmployeeList = (props) => {
                             <td>{employee.department.map(dept => (<div className="dept-label">{dept}</div>))}</td>
                             <td> ₹ {employee.salary}</td>
                             <td>{stringifyDate(employee.startDate)}</td>
-                            <td><img src={deleteIcon}  alt="delete" />
+                            <td><img className="deleteIcon" src={deleteIcon} onClick={() => remove(employee.id)} alt="delete" />
                                 <img  className="editIcon" src={editIcon} onClick={() => edit(employee.id)} alt="edit" /></td>
                         </tr>
                     ))

@@ -1,57 +1,6 @@
 {
   "employee": [
     {
-      "id": 1,
-      "name": "Mark",
-      "profile": "../../assets/profile-images/Ellipse -2.png",
-      "gender": "male",
-      "department": [
-        "Finance",
-        "Engineer"
-      ],
-      "salary": "500000",
-      "startDate": "2020-12-31T18:30:00.000Z",
-      "note": "All In One"
-    },
-    {
-      "id": 2,
-      "name": "BillGates",
-      "profile": "../../assets/profile-images/Ellipse -3.png",
-      "gender": "male",
-      "department": [
-        "Engineering",
-        "Others"
-      ],
-      "salary": "500000",
-      "startDate": "2020-12-31T18:30:00.000Z",
-      "note": "Terrific Engineer"
-    },
-    {
-      "id": 3,
-      "name": "Mark",
-      "gender": "male",
-      "department": [
-        "Engineering",
-        "Finance"
-      ],
-      "salary": "500000",
-      "startDate": "29 Oct 2019",
-      "note": "All In One",
-      "profilePic": "../assets/profile-images/Ellipse -3.png"
-    },
-    {
-      "id": 4,
-      "name": "Saket",
-      "profile": "../../assets/profile-images/Ellipse -2.png",
-      "gender": "male",
-      "department": [
-        "Engineer",
-        "Others"
-      ],
-      "salary": "317600",
-      "startDate": "2020-01-14T18:30:00.000Z"
-    },
-    {
       "id": 5,
       "name": "Abhishek",
       "profile": "../../assets/profile-images/Ellipse -3.png",
@@ -61,73 +10,6 @@
         "Finance"
       ],
       "salary": "482700",
-      "startDate": "2020-12-31T18:30:00.000Z"
-    },
-    {
-      "id": 6,
-      "name": "Saket",
-      "profile": "../../assets/profile-images/Ellipse -2.png",
-      "gender": "male",
-      "department": [
-        "Engineer"
-      ],
-      "salary": 400000,
-      "startDate": "2020-12-31T18:30:00.000Z"
-    },
-    {
-      "id": 7,
-      "name": "Tanya",
-      "profile": "../../assets/profile-images/Ellipse -1.png",
-      "gender": "female",
-      "department": [
-        "Sales"
-      ],
-      "salary": 400000,
-      "startDate": "2020-12-31T18:30:00.000Z"
-    },
-    {
-      "id": 8,
-      "name": "Saketjain",
-      "profile": "../../assets/profile-images/Ellipse -3.png",
-      "gender": "male",
-      "department": [
-        "HR",
-        "Others"
-      ],
-      "salary": "475900",
-      "startDate": "2020-12-31T18:30:00.000Z"
-    },
-    {
-      "id": 9,
-      "name": "Ayushi",
-      "profile": "../../assets/profile-images/Ellipse -1.png",
-      "gender": "female",
-      "department": [
-        "Finance"
-      ],
-      "salary": "491700",
-      "startDate": "2020-12-31T18:30:00.000Z"
-    },
-    {
-      "id": 10,
-      "name": "Ayush",
-      "profile": "../../assets/profile-images/Ellipse -2.png",
-      "gender": "male",
-      "department": [
-        "Sales"
-      ],
-      "salary": "317500",
-      "startDate": "2020-12-31T18:30:00.000Z"
-    },
-    {
-      "id": 11,
-      "name": "Tanu",
-      "profile": "../../assets/profile-images/Ellipse -1.png",
-      "gender": "female",
-      "department": [
-        "Engineer"
-      ],
-      "salary": "481300",
       "startDate": "2020-12-31T18:30:00.000Z"
     }
   ]
