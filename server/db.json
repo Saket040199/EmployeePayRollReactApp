@@ -3,27 +3,28 @@
     {
       "id": 1,
       "name": "Mark",
+      "profile": "../../assets/profile-images/Ellipse -2.png",
       "gender": "male",
       "department": [
-        "Engineering",
-        "Finance"
+        "Finance",
+        "Engineer"
       ],
       "salary": "500000",
-      "startDate": "29 Oct 2019",
-      "note": "All In One",
-      "profilePic": "../../assets/profile-images/Ellipse -3.png"
+      "startDate": "2020-12-31T18:30:00.000Z",
+      "note": "All In One"
     },
     {
       "id": 2,
-      "name": "Bill Gates",
+      "name": "BillGates",
+      "profile": "../../assets/profile-images/Ellipse -3.png",
       "gender": "male",
       "department": [
-        "Engineering"
+        "Engineering",
+        "Others"
       ],
       "salary": "500000",
-      "startDate": "29 Oct 2019",
-      "note": "Terrific Engineer",
-      "profilePic": "../assets/profile-images/Ellipse -1.png"
+      "startDate": "2020-12-31T18:30:00.000Z",
+      "note": "Terrific Engineer"
     },
     {
       "id": 3,
@@ -41,13 +42,14 @@
     {
       "id": 4,
       "name": "Saket",
-      "profile": "../../assets/profile-images/Ellipse -3.png",
+      "profile": "../../assets/profile-images/Ellipse -2.png",
       "gender": "male",
       "department": [
-        "Engineer"
+        "Engineer",
+        "Others"
       ],
-      "salary": "479600",
-      "startDate": "2020-12-31T18:30:00.000Z"
+      "salary": "317600",
+      "startDate": "2020-01-14T18:30:00.000Z"
     },
     {
       "id": 5,
@@ -115,7 +117,7 @@
         "Sales"
       ],
       "salary": "317500",
-      "startDate": "2021-06-12T18:30:00.000Z"
+      "startDate": "2020-12-31T18:30:00.000Z"
     },
     {
       "id": 11,

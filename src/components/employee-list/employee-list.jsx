@@ -9,6 +9,12 @@ import profile4 from '../../assets/profile-images/Ellipse 1.png';
 import { withRouter } from 'react-router-dom';
 
 const EmployeeList = (props) => {
+
+    const edit = (id) => {
+        console.log(id);
+        props.history.push(`payroll-form/${id}`);
+    }
+
     return (
         <table id="display" className="table">
             <tbody>
@@ -32,7 +38,7 @@ const EmployeeList = (props) => {
                             <td> ₹ {employee.salary}</td>
                             <td>{stringifyDate(employee.startDate)}</td>
                             <td><img src={deleteIcon}  alt="delete" />
-                                <img src={editIcon}  alt="edit" /></td>
+                                <img  className="editIcon" src={editIcon} onClick={() => edit(employee.id)} alt="edit" /></td>
                         </tr>
                     ))
                 }

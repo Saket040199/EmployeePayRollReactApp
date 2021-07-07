@@ -87,6 +87,44 @@ import EmployeeService from '../../services/employee-service';
             this.yearChangeHandler = this.yearChangeHandler.bind(this);
             this.notesChangeHandler = this.notesChangeHandler.bind(this);
         }
+        componentDidMount = () => {
+          let id = this.props.match.params.id;
+          if (id !== undefined && id !== '') {
+              this.getEmployeeById(id);
+          }
+      }
+  
+      getEmployeeById = (id) => {
+          new EmployeeService().getEmployeeById(id)
+              .then(responseData => {
+                  this.setEmployeeData(responseData.data);
+              }).catch(error => {
+                  console.log("Error while fetching employee data by ID :\n" + JSON.stringify(error));
+              })
+      }
+  
+      stringifyDate = (date) => {
+          const options = { day: 'numeric', month: 'short', year: 'numeric' };
+          const newDate = !date ? "undefined" : new Date(Date.parse(date)).toLocaleDateString('en-GB', options);
+          return newDate;
+      }
+      setEmployeeData = (employee) => {
+          let dateArray = this.stringifyDate(employee.startDate).split(" ");
+          let employeeDay = (dateArray[0].length === 1) ? '0' + dateArray[0] : dateArray[0];
+          this.setState({
+              id: employee.id,
+              name: employee.name,
+              profile: employee.profile,
+              gender: employee.gender,
+              department: employee.department,
+              salary: employee.salary,
+              day: employeeDay,
+              month: dateArray[1],
+              year: dateArray[2],
+              note: employee.note,
+              isUpdate: true
+          });
+      }
         nameChangeHandler = (event) => {
             this.setState({name: event.target.value});
             this.checkName(event.target.value);
@@ -235,16 +273,27 @@ import EmployeeService from '../../services/employee-service';
             startDate: this.state.startDate,
             note: this.state.note
           }
+          if (this.state.isUpdate) {
+            new EmployeeService().updateEmployee(object)
+                .then(responseText => {
+                  //  alert("Employee Updated Successfully!!!\n" + JSON.stringify(responseText.data));
+                    this.reset();
+                    this.props.history.push("/home");
+                }).catch(error => {
+                    console.log("Error while updating Employee!!!\n" + JSON.stringify(error));
+                })
+        } else {
           new EmployeeService().addEmployee(object)
           .then(data => {
               console.log("DATA ADDED SUCCESSFULLY");
               alert("Employee Added Successfully!!!\n" + JSON.stringify(data))
-              this.props.history.push("home");
+              this.reset();
+              this.props.history.push("/home");
           }).catch(error => {
             alert("Error while adding Employee!!!\nError : " + error);
           })
-          this.reset();
-        
+         
+          }
         }
     }
       reset = () => {

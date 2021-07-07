@@ -24,8 +24,8 @@ class HomePage extends React.Component {
             .then(responseData => {
                   this.setState({allEmployeeArray: responseData.data});
                 this.setState({ employeeArray: responseData.data });
-            }).catch(errror => {
-                console.log("Error while fetching Employee List\nError : " + JSON.stringify(errror));
+            }).catch(error => {
+                console.log("Error while fetching Employee List\nError : " + JSON.stringify(error));
             })
 
     }
