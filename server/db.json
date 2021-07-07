@@ -116,6 +116,17 @@
       ],
       "salary": "317500",
       "startDate": "2021-06-12T18:30:00.000Z"
+    },
+    {
+      "id": 11,
+      "name": "Tanu",
+      "profile": "../../assets/profile-images/Ellipse -1.png",
+      "gender": "female",
+      "department": [
+        "Engineer"
+      ],
+      "salary": "481300",
+      "startDate": "2020-12-31T18:30:00.000Z"
     }
   ]
 }

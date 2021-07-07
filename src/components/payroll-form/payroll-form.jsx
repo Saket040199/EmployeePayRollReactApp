@@ -5,8 +5,7 @@ import profile2 from '../../assets/profile-images/Ellipse -2.png';
 import profile3 from '../../assets/profile-images/Ellipse -3.png';
 import profile4 from '../../assets/profile-images/Ellipse 1.png';
 import './payroll-form.scss';
-import logo from '../../assets/images/logo.png';
-import { userParams, Link, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import EmployeeService from '../../services/employee-service';
 
 
@@ -239,7 +238,8 @@ import EmployeeService from '../../services/employee-service';
           new EmployeeService().addEmployee(object)
           .then(data => {
               console.log("DATA ADDED SUCCESSFULLY");
-            //alert("Employee Added Successfully!!!\n" + JSON.stringify(data))
+              alert("Employee Added Successfully!!!\n" + JSON.stringify(data))
+              this.props.history.push("home");
           }).catch(error => {
             alert("Error while adding Employee!!!\nError : " + error);
           })
@@ -253,15 +253,6 @@ import EmployeeService from '../../services/employee-service';
  render(){
     return (
     <div className="body">
-    <header className="header-content header">
-        <div className="logo-content">
-            <img src={logo} />
-            <div>
-                <span className="emp-text">EMPLOYEE</span><br />
-                <span className="emp-text emp-payroll">PAYROLL</span>
-            </div>
-        </div>
-    </header>
     <div className="form-content">
     <form className="form" action="#" onSubmit={this.save} onReset={this.reset}>
         <div className="form-head">
@@ -400,7 +391,7 @@ import EmployeeService from '../../services/employee-service';
             <textarea id="notes" className="input note" name="notes" value={this.state.notes} onChange={this.notesChangeHandler} placeholder="Write about yourself.."></textarea>
         </div>
         <div className="button-content">
-            <a href=''  id="cancelButton" className=" button cancelButton">Cancel</a>
+            <Link to=''  id="cancelButton" className=" button cancelButton">Cancel</Link>
             <div className="submit-reset">
                 <button type="submit" className="button submitButton"  id="submitButton">{this.state.isUpdate ? 'Update' : 'Submit'}</button>
                 <button type="reset"  className="resetButton button">Reset</button>

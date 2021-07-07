@@ -6,4 +6,9 @@ export default class EmployeeService {
     addEmployee(data){
         return AxiosService.postService(`${this.baseUrl}employee`,data)
     }
+
+    getAllEmployees() {
+        return AxiosService.getService(`${this.baseUrl}employee`);
+      }
+
 }
